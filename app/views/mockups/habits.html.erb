@@ -35,5 +35,11 @@
         <% end %>
       </tbody>
     </table>
+
   </div>
+  <%= form_with url: '#', class: 'breatheTop habitForm hidden' do |f|%>
+    <%= f.text_field :content %>
+    <%= f.submit 'Add Habit', class: 'addHabitButton' %>
+  <% end %>
+  <button class="addHabitButton js--showHabitForm">Add Habit</button>
 </section>
