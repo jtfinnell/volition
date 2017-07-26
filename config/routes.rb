@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'marketing#home'
 
+  get '/habits'                       => 'mockups#habits'
+
   get    '/nice_job'                  => 'pages#nice_job', as: :nice_job
   get    '/welcome'                   => 'pages#welcome', as: :welcome
   get    '/privacy'                   => 'marketing#privacy', as: :privacy

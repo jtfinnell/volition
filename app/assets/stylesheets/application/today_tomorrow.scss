@@ -105,6 +105,7 @@ div[data-react-class='TodoList'] {
 
 .checkbox {
   label {
+    background: $white;
     position: relative;
     border: 1px solid $medium-gray;
     border-radius: $base-border-radius;

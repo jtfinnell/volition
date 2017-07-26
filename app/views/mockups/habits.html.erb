@@ -1,0 +1,39 @@
+<section class="appSection">
+  <h1>Habits</h1>
+  <%= link_to "&larr; back to dashboard".html_safe, '#', class: "todayLink" %>
+
+  <div class="habits">
+    <table class="habitsTable">
+      <thead>
+        <tr>
+          <td>Name</td>
+          <% ((Date.current-7)..Date.current).each do |date| %>
+            <td><%= date.day %></td>
+          <% end %>
+        </tr>
+      </thead>
+      <tbody>
+        <% @habits.each do |habit| %>
+          <tr>
+            <td><%= habit %></td>
+            <% ((Date.current-7)..Date.current).each_with_index do |date, index| %>
+              <% if date.day == 20 && habit == @habits.first %>
+                <% class_name = 'completedDay top' %>
+              <% elsif date.day == 20 && habit == @habits.last %>
+                <% class_name = 'completedDay bottom' %>
+              <% elsif date.day == 20 %>
+                <% class_name = 'completedDay' %>
+              <% end %>
+              <td class="<%= class_name %>">
+                <div class="checkbox">
+                  <input class="completeInput" type="checkbox" id="checkbox<%= habit + index.to_s %>">
+                  <label for="checkbox<%= habit + index.to_s %>"></label>
+                </div>
+              </td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>

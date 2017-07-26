@@ -1,5 +1,10 @@
 class MockupsController < ApplicationController
-  def week_plan
-    @todo_list  = TodoList.last
+  def habits
+    @habits = [
+      "Rise early",
+      "Work out",
+      "Read",
+      "Work"
+    ]
   end
 end
