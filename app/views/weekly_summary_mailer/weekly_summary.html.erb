@@ -1,0 +1,148 @@
+<style>
+body {
+  color: #555;
+  line-height: 1.3;
+}
+
+.wrap {
+  width: 480px;
+  margin-bottom: 40px;
+}
+
+.subhead {
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.stats {
+  background: #eee;
+}
+
+.statItem {
+  display: inline-block;
+  padding: 30px;
+}
+
+.statItem:first-of-type {
+}
+
+.arrow {
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+.number {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.number.better {
+  color: #49be5a;
+}
+
+.number.worse {
+  color: #f44336;
+}
+
+.label {
+  margin: 0;
+  font-weight: normal;
+}
+
+.contentSection {
+  text-align: left;
+}
+
+ul {
+  padding: 0
+}
+
+li {
+  margin: 10px 0;
+}
+
+.button {
+  background: #49be5a;
+  display: block;
+  color: #ffffff;
+  padding: 0.6em 1.5em;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 18px;
+  margin-top: 40px;
+  width: 40%;
+}
+
+</style>
+
+<body>
+  <div class="wrap">
+    <%= email_image_tag 'logo.png', class: 'imgClass', width: 200, style: 'margin:0;margin-top: 40px; padding:0; border:none; display:block;', alt: "logo" %>
+
+    <h1>Weekly Summary</h1>
+    <h3>What gets measured gets mananged.</h3>
+
+    <section class="stats">
+      <div class="statItem">
+        <p class="number better">
+        80%
+        <span class="arrow">&#9650;</span>
+        </p>
+
+        <p class="label">Tasks completed</p>
+      </div>
+
+      <div class="statItem">
+        <p class="number worse">
+        7
+        <span class="arrow">&#9660;</span>
+        </p>
+        <p class="label">Weekly rating</p>
+      </div>
+    </section>
+
+    <section class="contentSection">
+      <h3 class="subhead">Efficiency and Impact</h3>
+      <p>You did well completing your tasks this week, but felt you could have been more productive. Your tasks were low impact.</p>
+    </section>
+
+    <section class="contentSection">
+      <h3 class="subhead">What you could have done better</h3>
+      <ul>
+        <li>
+          I got sucked into a large amount of unplanned work on Nugget. I should have known to not make estimates without having the proper context. Very frustrated with myself and Sturdy right now.
+        </li>
+        <li>
+          I planned to set up Matter's DNS and S3 without confirming that I had access to all the tools I needed.
+        </li>
+        <li>
+          Snoozed my alarm, didn't work out, and couldn't find my focus today. I allowed myself to become distracted.
+        </li>
+        <li>
+          Not much.
+        </li>
+      </ul>
+    </section>
+
+    <section class="contentSection">
+      <h3 class="subhead">What you did well</h3>
+      <ul>
+        <li>
+          I got sucked into a large amount of unplanned work on Nugget. I should have known to not make estimates without having the proper context. Very frustrated with myself and Sturdy right now.
+        </li>
+        <li>
+          I planned to set up Matter's DNS and S3 without confirming that I had access to all the tools I needed.
+        </li>
+        <li>
+          Snoozed my alarm, didn't work out, and couldn't find my focus today. I allowed myself to become distracted.
+        </li>
+        <li>
+          Not much.
+        </li>
+      </ul>
+    </section>
+
+    <%= link_to "Plan your week", login_url, class: "button" %>
+  </div>
+</body>
