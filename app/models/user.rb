@@ -49,4 +49,19 @@ class User < ApplicationRecord
   def trialing?
     reflections.count < 2
   end
+
+  def completion_percentage(from:, to:)
+    all_todos      = self.todos.where(created_at: from..to)
+    complete_todos = all_todos.where(complete: true)
+
+    if all_todos.count == 0 && complete_todos.count == 0
+      return 0
+    end
+
+    (complete_todos.count.to_f / all_todos.count) * 100
+  end
+
+  def average_rating(from:, to:)
+    (reflections.where(created_at: from..to).average(:rating) || 0).to_i
+  end
 end
