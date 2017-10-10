@@ -33,7 +33,7 @@ class ReflectionsController < AuthenticatedController
     if tomorrow_is_trackable?
       tomorrow_path
     else
-      flash[:success] = 'Nice job today! Get some rest.'
+      flash[:success] = 'Nice job today! Relax, Enjoy, and Get some rest.'
       dashboard_path
     end
   end
