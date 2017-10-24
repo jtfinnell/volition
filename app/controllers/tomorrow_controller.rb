@@ -51,7 +51,7 @@ class TomorrowController < AuthenticatedController
       nice_job_path
     else
       unless TodoList.today(current_user).blank?
-        flash[:success] = 'Nice job today! Get some rest.'
+        flash[:success] = 'Nice job today! Relax, Enjoy, and Get some rest.'
       end
       dashboard_path
     end
