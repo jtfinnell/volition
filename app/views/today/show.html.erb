@@ -1,5 +1,6 @@
 <section class="appSection">
   <h1>Today</h1>
+  <%= Date.current.strftime('%A') %>
   <div class="calendarIcon">
     <div class="calendarIconTopBar"><span class="month"><%= Date.current.strftime('%B') %></span></div>
     <div class="calendarIconDay"><span class="day"><%= Date.current.strftime('%e') %></span></div>
@@ -31,6 +32,5 @@
     </section>
   <% end %>
 
-  <%= link_to @button_text, @button_path, class: 'finishDayButton button' %>
-  <p class="instructions light">Clicking "All done" will take you to the reflection page. You can come back here and edit your todos until tomorrow.</p>
+  <%= link_to @button_text, @button_path, class: 'finishDayButton button' %> 
 </section>
