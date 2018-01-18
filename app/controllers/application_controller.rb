@@ -58,7 +58,7 @@ class ApplicationController < ActionController::Base
         tz.tzinfo.name == cookies[:timezone].delete('\"')
       end
     rescue
-      timezone = ActiveSupport::TimeZone['UTC']
+      timezone = ActiveSupport::TimeZone['America/Indiana/Indianapolis']
     end
 
     Time.use_zone(timezone) { yield }
