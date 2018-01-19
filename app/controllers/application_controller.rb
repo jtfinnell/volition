@@ -60,7 +60,7 @@ class ApplicationController < ActionController::Base
     rescue
       timezone = ActiveSupport::TimeZone['America/Indiana/Indianapolis']
     end
-
+    timezone = ActiveSupport::TimeZone['America/Indiana/Indianapolis']
     Time.use_zone(timezone) { yield }
   end
 end
